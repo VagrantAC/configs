@@ -1,1 +1,6 @@
 # configs
+
+### .vimrc
+
+### .zshrc
+
