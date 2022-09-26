@@ -1,6 +1,6 @@
 local status_ok, feline = pcall(require, "feline")
 if not status_ok then return end
-local C = require "default_theme.colors"
+local C = require "onedark.colors"
 local hl = require("core.status").hl
 local provider = require("core.status").provider
 local conditional = require("core.status").conditional

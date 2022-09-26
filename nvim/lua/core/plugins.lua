@@ -164,7 +164,7 @@ local astro_plugins = {
     after = "mason.nvim",
     config = function() require "configs.mason-tool-installer" end,
   },
-
+  --
   -- Built-in LSP
   ["neovim/nvim-lspconfig"] = {},
 
@@ -275,6 +275,12 @@ local astro_plugins = {
     config = function() require "configs.session_manager" end,
   },
   ["navarasu/onedark.nvim"] = {},
+  ["neoclide/coc.nvim"] = {
+    branch = "release",
+    -- config = function() require "yarn install --frozen-lockfile" end,
+  },
+  -- ["jayli/vim-easycomplete"] = {},
+  ["SirVer/ultisnips"] = {},
 }
 
 if astronvim.updater.snapshot then

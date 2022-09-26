@@ -1,5 +1,5 @@
 local M = { hl = {}, provider = {}, conditional = {} }
-local C = require "default_theme.colors"
+local C = require "onedark.colors"
 
 local function hl_by_name(name) return string.format("#%06x", vim.api.nvim_get_hl_by_name(name.group, true)[name.prop]) end
 
@@ -42,7 +42,7 @@ end
 function M.hl.fg(hlgroup, base) return vim.tbl_deep_extend("force", base or {}, { fg = hl_prop(hlgroup, "foreground") }) end
 
 function M.hl.mode(base)
-  local lualine_avail, lualine = pcall(require, "lualine.themes." .. (vim.g.colors_name or "default_theme"))
+  local lualine_avail, lualine = pcall(require, "lualine.themes." .. (vim.g.colors_name or "onedark"))
   return function()
     local lualine_opts = lualine_avail and lualine[M.modes[vim.fn.mode()][2]:lower()]
     return M.hl.group(
