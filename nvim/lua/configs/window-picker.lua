@@ -1,4 +1,4 @@
-local status_ok, window_picker = pcall(require, "window-picker")
-if not status_ok then return end
-local colors = require "onedark.colors"
-window_picker.setup(astronvim.user_plugin_opts("plugins.window-picker", { other_win_hl_color = colors.grey_4 }))
+local colors = require "default_theme.colors"
+require("window-picker").setup(
+  astronvim.user_plugin_opts("plugins.window-picker", { use_winbar = "smart", other_win_hl_color = colors.grey_4 })
+)
