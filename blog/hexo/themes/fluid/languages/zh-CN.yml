@@ -33,6 +33,11 @@ links:
   title: '友链'
   subtitle: '友情链接'
 
+resource:
+  menu: '资料'
+  title: '资料'
+  subtitle: '资料'
+
 page404:
   menu: '页面不存在'
   title: '页面不存在'

@@ -350,7 +350,8 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: "resource", link: "/resource/", icon: "iconfont icon-book" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -701,7 +702,7 @@ post:
 
     # 开启后，只有在文章 Front-matter 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度
     # If true, only set `math: true` in Front-matter will enable math, to load faster when the page does not contain math
-    specific: true 
+    specific: false 
 
     # Options: mathjax | katex
     engine: mathjax
@@ -980,6 +981,22 @@ page404:
   # Delay in redirecting to home page (milliseconds)
   redirect_delay: 5000
 
+#---------------------------
+# 标签页
+# Resource Page
+#---------------------------
+resource:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+  intro: "我们都有光明的未来"
+  slogan:
+    enable: true
+
+    # 为空则按 hexo config.subtitle 显示
+    # If empty, text based on `subtitle` in hexo config
+    text: "我们都有光明的未来。"
 
 #---------------------------
 # 友链页
@@ -993,24 +1010,25 @@ links:
   # 友链的成员项
   # Member item of page
   items:
-    - {
-        title: "Fluid Blog",
-        intro: "主题博客",
-        link: "https://hexo.fluid-dev.com/",
-        avatar: "/img/favicon.png"
-      }
-    - {
-        title: "Fluid Docs",
-        intro: "主题使用指南",
-        link: "https://hexo.fluid-dev.com/docs/",
-        avatar: "/img/favicon.png"
-      }
-    - {
-        title: "Fluid Repo",
-        intro: "主题 GitHub 仓库",
-        link: "https://github.com/fluid-dev/hexo-theme-fluid",
-        avatar: "/img/favicon.png"
-      }
+    # - {
+    #     title: "Fluid Blog",
+    #     intro: "主题博客",
+    #     link: "https://hexo.fluid-dev.com/",
+    #     avatar: "/img/favicon.png"
+    #   }
+    # - {
+    #     title: "Fluid Docs",
+    #     intro: "主题使用指南",
+    #     link: "https://hexo.fluid-dev.com/docs/",
+    #     avatar: "/img/favicon.png"
+    #   }
+    # - {
+    #     title: "Fluid Repo",
+    #     intro: "主题 GitHub 仓库",
+    #     link: "https://github.com/fluid-dev/hexo-theme-fluid",
+    #     avatar: "/img/favicon.png"
+    #   }
+
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
@@ -1067,7 +1085,7 @@ static_prefix:
 
   nprogress: https://lib.baomitu.com/nprogress/0.2.0/
 
-  mathjax: https://lib.baomitu.com/mathjax/3.2.2/
+  mathjax: https://cdn.staticfile.org/mathjax/3.0.5/es5/ 
 
   katex: https://lib.baomitu.com/KaTeX/0.16.2/
 
