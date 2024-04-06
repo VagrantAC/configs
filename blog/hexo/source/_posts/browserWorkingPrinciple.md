@@ -19,9 +19,8 @@
 #### 进程模型
 
 1. **Process-per-site-instance**：就是你打开一个网站，然后从这个网站链开的一系列网站都属于一个进程。这是Chrome的默认模式。
-2. xxxxxxxxxx54 1class Solution {2public:3    long long minCost(vector<int>& basket1, vector<int>& basket2) {4        map<int, int> mp;5        vector<int> vec;6        for (int i = 0; i < basket1.size(); i ++) {7            if (mp[basket1[i]] == 0) {8                vec.push_back(basket1[i]);9            }10            mp[basket1[i]] ++;11        }12        for (int i = 0; i < basket2.size(); i ++) {13            if (mp[basket2[i]] == 0) {14                vec.push_back(basket2[i]);15            }16            mp[basket2[i]] ++;17        }18        int minn = -1;19        for (int i = 0; i < vec.size(); i ++) {20            if (mp[vec[i]] % 2) {21                return -1;22            }23            if (minn == -1) {24                minn = vec[i];25            } else {26                minn = min(minn, vec[i]);27            }28            mp[vec[i]] /= 2;29        }30        31        for (int i = 0; i < basket1.size(); i ++) {32            mp[basket1[i]] --;33        }34        35        vector<int> a;36        for (int i = 0; i < vec.size(); i ++) {37            while (mp[vec[i]] < 0) {38                a.push_back(vec[i]);39                mp[vec[i]] ++;40            }41            while (mp[vec[i]] > 0) {42                a.push_back(vec[i]);43                mp[vec[i]] --;44            }45        }46        47        sort(a.begin(), a.end());48        long long ans = 0;49        for (int i = 0; i < a.size() / 2; i ++) {50            ans += min(minn * ((a[i] != minn) + 1), a[i]);51        }52        return ans;53    }54};cpp
-3. **Process-per-tab**：这个简单，一个tab一个process，不论各个tab的站点有无联系，就和宣传的那样。用–process-per-tab开启。
-4. **Single Process**：这个很熟悉了吧，传统浏览器的模式，没有多进程只有多线程，用–single-process开启。
+2. **Process-per-tab**：这个简单，一个tab一个process，不论各个tab的站点有无联系，就和宣传的那样。用–process-per-tab开启。
+3. **Single Process**：这个很熟悉了吧，传统浏览器的模式，没有多进程只有多线程，用–single-process开启。
 
 ### 导航
 
